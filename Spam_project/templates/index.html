@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" step="any" name="word_freq_over" placeholder="word_freq_over" required="required" />
+        <input type="number" step="any" name="word_freq_remove" placeholder="word_freq_remove" required="required" />
+        <input type="number" step="any" name="word_freq_internet" placeholder="word_freq_internet" required="required" />
+        <input type="number" step="any" name="word_freq_order" placeholder="word_freq_order" required="required" />
+        <input type="number" step="any" name="word_freq_receive" placeholder="word_freq_receive" required="required" />
+        <input type="number" step="any" name="word_freq_addresses" placeholder="word_freq_addresses" required="required" />
+        <input type="number" step="any" name="word_freq_free" placeholder="word_freq_free" required="required" />
+        <input type="number" step="any" name="word_freq_business" placeholder="word_freq_business" required="required" />
+        <input type="number" step="any" name="word_freq_email" placeholder="word_freq_email" required="required" />
+        <input type="number" step="any" name="word_freq_you" placeholder="word_freq_you" required="required" />
+        <input type="number" step="any" name="word_freq_your" placeholder="word_freq_your" required="required" />
+        <input type="number" step="any" name="word_freq_000" placeholder="word_freq_000" required="required" />
+        <input type="number" step="any" name="word_freq_money" placeholder="word_freq_money" required="required" />
+        <input type="number" step="any" name="word_freq_hp" placeholder="word_freq_hp" required="required" />
+        <input type="number" step="any" name="word_freq_hpl" placeholder="word_freq_hpl" required="required" />
+        <input type="number" step="any" name="capital_run_length_total" placeholder="capital_run_length_total" required="required" />
+        <input type="number" step="any" name="capital_run_length_longest" placeholder="capital_run_length_longest" required="required" />
+        <input type="number" step="any" name="char_freq_$" placeholder="char_freq_$" required="required" />
+        <input type="number" step="any" name="char_freq_!" placeholder="char_freq_!" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
